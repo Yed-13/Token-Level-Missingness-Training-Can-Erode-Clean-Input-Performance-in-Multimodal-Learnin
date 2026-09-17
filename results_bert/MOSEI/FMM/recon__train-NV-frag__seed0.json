@@ -1,0 +1,309 @@
+{
+  "config": {
+    "dataset": "MOSEI",
+    "method": "recon",
+    "train_regime": "NV-frag",
+    "protocol": "FMM",
+    "test_protocol": "",
+    "seed": 0,
+    "d": 64,
+    "layers": 2,
+    "nhead": 4,
+    "dropout": 0.1,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 32,
+    "max_epochs": 40,
+    "patience": 8,
+    "lambda_recon": 0.5,
+    "lambda_inv": 0.1,
+    "dro_eta": 0.01,
+    "dro_ema": 0.1,
+    "granularity": 8,
+    "label_bins": 5,
+    "inv_mode": "cmmd",
+    "alpha_temp": 1.0,
+    "dro_mode": "raw",
+    "dro_warmup_steps": 100,
+    "q_max_ratio": 0.0,
+    "text_encoder": "bert",
+    "bert_name": "auto",
+    "bert_lr": 2e-05,
+    "freeze_bert_layers": 0,
+    "amp": "bf16",
+    "num_workers": 3,
+    "verbose": 0,
+    "root": "datasets",
+    "out": "results_bert"
+  },
+  "method_spec": {
+    "mask_train": true,
+    "recon": true,
+    "dro": false,
+    "inv": 0.0,
+    "cap": "uniform",
+    "inv_mode": "cmmd",
+    "alpha_temp": 1.0,
+    "dro_mode": "raw",
+    "q_max_ratio": 0.0
+  },
+  "cells": {
+    "U-lo": {
+      "mae": 0.5915158827479087,
+      "corr": 0.6922014377955726,
+      "acc2": 0.7877270225646671,
+      "f1": 0.7877729840168434,
+      "acc2_has0": 0.7466838377334192,
+      "acc7": 0.504443013522215,
+      "acc5": 0.4643485726550762
+    },
+    "U-hi": {
+      "mae": 0.6841532231010473,
+      "corr": 0.5433579597411337,
+      "acc2": 0.7252063841496974,
+      "f1": 0.7145637680569222,
+      "acc2_has0": 0.7180081562567074,
+      "acc7": 0.46688130500107317,
+      "acc5": 0.445889675896115
+    },
+    "T-frag": {
+      "mae": 0.7300243901583381,
+      "corr": 0.455888449872145,
+      "acc2": 0.6935057787561916,
+      "f1": 0.6766286632385663,
+      "acc2_has0": 0.7034986048508263,
+      "acc7": 0.44958145524790727,
+      "acc5": 0.43378407383558704
+    },
+    "NV-frag": {
+      "mae": 0.5518216010921118,
+      "corr": 0.7458732804745599,
+      "acc2": 0.8145294441386902,
+      "f1": 0.8163863144695599,
+      "acc2_has0": 0.756643056449882,
+      "acc7": 0.5158188452457609,
+      "acc5": 0.4702725906846963
+    },
+    "NONE": {
+      "mae": 0.535112950254418,
+      "corr": 0.7681125146313019,
+      "acc2": 0.8280132085855806,
+      "f1": 0.8298829083831561,
+      "acc2_has0": 0.7694784288473921,
+      "acc7": 0.5247907276239536,
+      "acc5": 0.4814337840738356
+    }
+  },
+  "alpha": null,
+  "recon_hidden": {
+    "t": 128,
+    "a": 128,
+    "v": 128
+  },
+  "params": 110064065,
+  "best_epoch": 12,
+  "epochs_run": 21,
+  "val_best_mae": 0.5269237323631774,
+  "history": [
+    {
+      "epoch": 0,
+      "train_task": 0.6356364739199677,
+      "train_recon": 0.6002134631825884,
+      "train_inv": 0.0,
+      "val_mae": 0.6544059119174852,
+      "val_acc2": 0.7399165507649513
+    },
+    {
+      "epoch": 1,
+      "train_task": 0.5350657171819281,
+      "train_recon": 0.5179804444794969,
+      "train_inv": 0.0,
+      "val_mae": 0.5431377812941274,
+      "val_acc2": 0.8390125173852573
+    },
+    {
+      "epoch": 2,
+      "train_task": 0.4678896666485846,
+      "train_recon": 0.5030730167111973,
+      "train_inv": 0.0,
+      "val_mae": 0.5380763064080352,
+      "val_acc2": 0.8466620305980528
+    },
+    {
+      "epoch": 3,
+      "train_task": 0.41536501169014867,
+      "train_recon": 0.4393929080038434,
+      "train_inv": 0.0,
+      "val_mae": 0.5389400211917978,
+      "val_acc2": 0.827538247566064
+    },
+    {
+      "epoch": 4,
+      "train_task": 0.3753827123844666,
+      "train_recon": 0.3758601057376842,
+      "train_inv": 0.0,
+      "val_mae": 0.5599917064513962,
+      "val_acc2": 0.8379694019471489
+    },
+    {
+      "epoch": 5,
+      "train_task": 0.3385391295189865,
+      "train_recon": 0.32909136607879724,
+      "train_inv": 0.0,
+      "val_mae": 0.5396450480664241,
+      "val_acc2": 0.838317107093185
+    },
+    {
+      "epoch": 6,
+      "train_task": 0.3176678620935085,
+      "train_recon": 0.27676875752940067,
+      "train_inv": 0.0,
+      "val_mae": 0.5516005229863937,
+      "val_acc2": 0.8351877607788595
+    },
+    {
+      "epoch": 7,
+      "train_task": 0.290133506837289,
+      "train_recon": 0.25799005319897517,
+      "train_inv": 0.0,
+      "val_mae": 0.553250474384416,
+      "val_acc2": 0.8132823365785813
+    },
+    {
+      "epoch": 8,
+      "train_task": 0.2703683637497867,
+      "train_recon": 0.25845924271725856,
+      "train_inv": 0.0,
+      "val_mae": 0.5536682476881416,
+      "val_acc2": 0.8195410292072323
+    },
+    {
+      "epoch": 9,
+      "train_task": 0.2587854721872418,
+      "train_recon": 0.2543262311825708,
+      "train_inv": 0.0,
+      "val_mae": 0.5531746045846089,
+      "val_acc2": 0.8028511821974966
+    },
+    {
+      "epoch": 10,
+      "train_task": 0.24405365493128028,
+      "train_recon": 0.19187213970788858,
+      "train_inv": 0.0,
+      "val_mae": 0.5367285441358354,
+      "val_acc2": 0.8386648122392212
+    },
+    {
+      "epoch": 11,
+      "train_task": 0.23598203920060684,
+      "train_recon": 0.18135788106226855,
+      "train_inv": 0.0,
+      "val_mae": 0.5472978410843157,
+      "val_acc2": 0.8463143254520167
+    },
+    {
+      "epoch": 12,
+      "train_task": 0.22506479081439576,
+      "train_recon": 0.14091232713824406,
+      "train_inv": 0.0,
+      "val_mae": 0.5269237323631774,
+      "val_acc2": 0.8174547983310153
+    },
+    {
+      "epoch": 13,
+      "train_task": 0.22018303482917745,
+      "train_recon": 0.1313110747444532,
+      "train_inv": 0.0,
+      "val_mae": 0.5377398895777719,
+      "val_acc2": 0.8191933240611962
+    },
+    {
+      "epoch": 14,
+      "train_task": 0.21530879357457525,
+      "train_recon": 0.13023753619659156,
+      "train_inv": 0.0,
+      "val_mae": 0.527798066199431,
+      "val_acc2": 0.827538247566064
+    },
+    {
+      "epoch": 15,
+      "train_task": 0.20765813825528556,
+      "train_recon": 0.11614901543715034,
+      "train_inv": 0.0,
+      "val_mae": 0.5458859636352255,
+      "val_acc2": 0.8289290681502086
+    },
+    {
+      "epoch": 16,
+      "train_task": 0.19920482626224753,
+      "train_recon": 0.1271529983814464,
+      "train_inv": 0.0,
+      "val_mae": 0.5334791632927656,
+      "val_acc2": 0.8358831710709318
+    },
+    {
+      "epoch": 17,
+      "train_task": 0.1964937194051892,
+      "train_recon": 0.11025674571856467,
+      "train_inv": 0.0,
+      "val_mae": 0.5359936314493114,
+      "val_acc2": 0.840403337969402
+    },
+    {
+      "epoch": 18,
+      "train_task": 0.19261002861137674,
+      "train_recon": 0.11124790618137943,
+      "train_inv": 0.0,
+      "val_mae": 0.5388779244094466,
+      "val_acc2": 0.8337969401947148
+    },
+    {
+      "epoch": 19,
+      "train_task": 0.18613163091705065,
+      "train_recon": 0.08820163647885067,
+      "train_inv": 0.0,
+      "val_mae": 0.5354001260676657,
+      "val_acc2": 0.8331015299026425
+    },
+    {
+      "epoch": 20,
+      "train_task": 0.17970215174974538,
+      "train_recon": 0.08940419972282436,
+      "train_inv": 0.0,
+      "val_mae": 0.531284771803896,
+      "val_acc2": 0.825452016689847
+    }
+  ],
+  "dro_q": null,
+  "dro_reference": null,
+  "dro_running": null,
+  "wall_seconds": 1773.1,
+  "diagnostics": {
+    "text_repr": {
+      "cos_offdiag": 0.2698497176170349,
+      "eff_rank_raw": 9.533548355102539,
+      "part_ratio_raw": 4.869814872741699,
+      "eff_rank_centred": 10.22657585144043,
+      "part_ratio_centred": 4.899481296539307,
+      "emb_std": 0.98321533203125
+    },
+    "fused_repr": {
+      "cos_offdiag": 0.3926602900028229,
+      "eff_rank_raw": 5.930980205535889,
+      "part_ratio_raw": 3.2774195671081543,
+      "eff_rank_centred": 6.242369651794434,
+      "part_ratio_centred": 3.2880094051361084,
+      "emb_std": 0.763048529624939
+    }
+  },
+  "test_protocol": "FMM",
+  "freeze_bert_layers": 0,
+  "text_encoder": "bert",
+  "bert_name": "bert-base-uncased",
+  "env": {
+    "device": "cuda",
+    "torch": "2.14.0+cu130",
+    "platform": "Linux-5.15.0-101-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12"
+  }
+}

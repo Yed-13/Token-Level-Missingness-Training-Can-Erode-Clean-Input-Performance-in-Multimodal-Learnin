@@ -1,0 +1,309 @@
+{
+  "config": {
+    "dataset": "MOSEI",
+    "method": "recon",
+    "train_regime": "T-frag",
+    "protocol": "FMM",
+    "test_protocol": "",
+    "seed": 0,
+    "d": 64,
+    "layers": 2,
+    "nhead": 4,
+    "dropout": 0.1,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 32,
+    "max_epochs": 40,
+    "patience": 8,
+    "lambda_recon": 0.5,
+    "lambda_inv": 0.1,
+    "dro_eta": 0.01,
+    "dro_ema": 0.1,
+    "granularity": 8,
+    "label_bins": 5,
+    "inv_mode": "cmmd",
+    "alpha_temp": 1.0,
+    "dro_mode": "raw",
+    "dro_warmup_steps": 100,
+    "q_max_ratio": 0.0,
+    "text_encoder": "bert",
+    "bert_name": "auto",
+    "bert_lr": 2e-05,
+    "freeze_bert_layers": 0,
+    "amp": "bf16",
+    "num_workers": 3,
+    "verbose": 0,
+    "root": "datasets",
+    "out": "results_bert"
+  },
+  "method_spec": {
+    "mask_train": true,
+    "recon": true,
+    "dro": false,
+    "inv": 0.0,
+    "cap": "uniform",
+    "inv_mode": "cmmd",
+    "alpha_temp": 1.0,
+    "dro_mode": "raw",
+    "q_max_ratio": 0.0
+  },
+  "cells": {
+    "U-lo": {
+      "mae": 0.5961012245894093,
+      "corr": 0.6854644464820729,
+      "acc2": 0.8091909741331864,
+      "f1": 0.8044838625007543,
+      "acc2_has0": 0.8011590470057952,
+      "acc7": 0.5024254131787937,
+      "acc5": 0.5065464691993989
+    },
+    "U-hi": {
+      "mae": 0.6876796420467697,
+      "corr": 0.5427888168141661,
+      "acc2": 0.7477160154100165,
+      "f1": 0.7374459077397304,
+      "acc2_has0": 0.7513629534234815,
+      "acc7": 0.46301781498175576,
+      "acc5": 0.4662373899978537
+    },
+    "T-frag": {
+      "mae": 0.7240854907948,
+      "corr": 0.475725336921068,
+      "acc2": 0.7259218492019813,
+      "f1": 0.7137949945606068,
+      "acc2_has0": 0.7285254346426273,
+      "acc7": 0.44734921657007937,
+      "acc5": 0.4394505258639193
+    },
+    "NV-frag": {
+      "mae": 0.5628485611303089,
+      "corr": 0.730279403715816,
+      "acc2": 0.8354430379746836,
+      "f1": 0.8313526699507456,
+      "acc2_has0": 0.8315518351577593,
+      "acc7": 0.5195964799313157,
+      "acc5": 0.5326035629963511
+    },
+    "NONE": {
+      "mae": 0.5434806034509448,
+      "corr": 0.7552875273304634,
+      "acc2": 0.845074298293891,
+      "f1": 0.8425294767667229,
+      "acc2_has0": 0.8291478858124061,
+      "acc7": 0.5275810259712385,
+      "acc5": 0.5316591543249625
+    }
+  },
+  "alpha": null,
+  "recon_hidden": {
+    "t": 128,
+    "a": 128,
+    "v": 128
+  },
+  "params": 110064065,
+  "best_epoch": 12,
+  "epochs_run": 21,
+  "val_best_mae": 0.6748622331802123,
+  "history": [
+    {
+      "epoch": 0,
+      "train_task": 0.7771103511498603,
+      "train_recon": 0.6301163035573496,
+      "train_inv": 0.0,
+      "val_mae": 0.716039365487007,
+      "val_acc2": 0.6415159944367177
+    },
+    {
+      "epoch": 1,
+      "train_task": 0.7378794082338781,
+      "train_recon": 0.693918856382224,
+      "train_inv": 0.0,
+      "val_mae": 0.697037377725751,
+      "val_acc2": 0.6995827538247567
+    },
+    {
+      "epoch": 2,
+      "train_task": 0.7218489433187751,
+      "train_recon": 0.6548922606050771,
+      "train_inv": 0.0,
+      "val_mae": 0.6974640459316035,
+      "val_acc2": 0.691933240611961
+    },
+    {
+      "epoch": 3,
+      "train_task": 0.7054086356394931,
+      "train_recon": 0.6638275305021193,
+      "train_inv": 0.0,
+      "val_mae": 0.6849436733905547,
+      "val_acc2": 0.7020166898470097
+    },
+    {
+      "epoch": 4,
+      "train_task": 0.6950882655009034,
+      "train_recon": 0.6367603209721725,
+      "train_inv": 0.0,
+      "val_mae": 0.6920293659401857,
+      "val_acc2": 0.7127955493741307
+    },
+    {
+      "epoch": 5,
+      "train_task": 0.6833412300630569,
+      "train_recon": 0.6124102819145536,
+      "train_inv": 0.0,
+      "val_mae": 0.6750956585880654,
+      "val_acc2": 0.7134909596662031
+    },
+    {
+      "epoch": 6,
+      "train_task": 0.6786394665437806,
+      "train_recon": 0.5942492588439964,
+      "train_inv": 0.0,
+      "val_mae": 0.7057694325801971,
+      "val_acc2": 0.700278164116829
+    },
+    {
+      "epoch": 7,
+      "train_task": 0.6653286638277996,
+      "train_recon": 0.5855009100914118,
+      "train_inv": 0.0,
+      "val_mae": 0.6931909478838465,
+      "val_acc2": 0.7086230876216968
+    },
+    {
+      "epoch": 8,
+      "train_task": 0.6463609748131707,
+      "train_recon": 0.5667572670176846,
+      "train_inv": 0.0,
+      "val_mae": 0.699963524427916,
+      "val_acc2": 0.71105702364395
+    },
+    {
+      "epoch": 9,
+      "train_task": 0.6427193486659853,
+      "train_recon": 0.583747015558854,
+      "train_inv": 0.0,
+      "val_mae": 0.6752140791195718,
+      "val_acc2": 0.696105702364395
+    },
+    {
+      "epoch": 10,
+      "train_task": 0.6306250118660194,
+      "train_recon": 0.560409047077366,
+      "train_inv": 0.0,
+      "val_mae": 0.6988050323129018,
+      "val_acc2": 0.702712100139082
+    },
+    {
+      "epoch": 11,
+      "train_task": 0.6218065872330241,
+      "train_recon": 0.5340746039782291,
+      "train_inv": 0.0,
+      "val_mae": 0.68350924275923,
+      "val_acc2": 0.7127955493741307
+    },
+    {
+      "epoch": 12,
+      "train_task": 0.6121204567790893,
+      "train_recon": 0.5174677635208876,
+      "train_inv": 0.0,
+      "val_mae": 0.6748622331802123,
+      "val_acc2": 0.7190542420027817
+    },
+    {
+      "epoch": 13,
+      "train_task": 0.6005101470726459,
+      "train_recon": 0.5095755940564017,
+      "train_inv": 0.0,
+      "val_mae": 0.7001109475808498,
+      "val_acc2": 0.6846314325452016
+    },
+    {
+      "epoch": 14,
+      "train_task": 0.5944219838385633,
+      "train_recon": 0.4973235744830076,
+      "train_inv": 0.0,
+      "val_mae": 0.696438375034159,
+      "val_acc2": 0.7034075104311543
+    },
+    {
+      "epoch": 15,
+      "train_task": 0.5877988312622064,
+      "train_recon": 0.4820220057730375,
+      "train_inv": 0.0,
+      "val_mae": 0.6846332267078087,
+      "val_acc2": 0.7194019471488178
+    },
+    {
+      "epoch": 16,
+      "train_task": 0.5819180074033675,
+      "train_recon": 0.4812258717955495,
+      "train_inv": 0.0,
+      "val_mae": 0.6812499281733766,
+      "val_acc2": 0.7211404728789986
+    },
+    {
+      "epoch": 17,
+      "train_task": 0.5747653558260668,
+      "train_recon": 0.4789385415497735,
+      "train_inv": 0.0,
+      "val_mae": 0.7053225136246037,
+      "val_acc2": 0.6901947148817802
+    },
+    {
+      "epoch": 18,
+      "train_task": 0.56659684551561,
+      "train_recon": 0.4573648597013274,
+      "train_inv": 0.0,
+      "val_mae": 0.6954180060909241,
+      "val_acc2": 0.6971488178025035
+    },
+    {
+      "epoch": 19,
+      "train_task": 0.5675481147630592,
+      "train_recon": 0.4558160857842948,
+      "train_inv": 0.0,
+      "val_mae": 0.7002609812722749,
+      "val_acc2": 0.7169680111265646
+    },
+    {
+      "epoch": 20,
+      "train_task": 0.5554258202157096,
+      "train_recon": 0.462551624411595,
+      "train_inv": 0.0,
+      "val_mae": 0.727452719382014,
+      "val_acc2": 0.6988873435326843
+    }
+  ],
+  "dro_q": null,
+  "dro_reference": null,
+  "dro_running": null,
+  "wall_seconds": 1762.5,
+  "diagnostics": {
+    "text_repr": {
+      "cos_offdiag": 0.44275304675102234,
+      "eff_rank_raw": 5.069286823272705,
+      "part_ratio_raw": 3.1187632083892822,
+      "eff_rank_centred": 5.677587985992432,
+      "part_ratio_centred": 3.218364715576172,
+      "emb_std": 1.0560431480407715
+    },
+    "fused_repr": {
+      "cos_offdiag": 0.346007764339447,
+      "eff_rank_raw": 9.900208473205566,
+      "part_ratio_raw": 4.403723239898682,
+      "eff_rank_centred": 10.870543479919434,
+      "part_ratio_centred": 4.653866767883301,
+      "emb_std": 0.7050971388816833
+    }
+  },
+  "test_protocol": "FMM",
+  "freeze_bert_layers": 0,
+  "text_encoder": "bert",
+  "bert_name": "bert-base-uncased",
+  "env": {
+    "device": "cuda",
+    "torch": "2.14.0+cu130",
+    "platform": "Linux-5.15.0-101-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12"
+  }
+}

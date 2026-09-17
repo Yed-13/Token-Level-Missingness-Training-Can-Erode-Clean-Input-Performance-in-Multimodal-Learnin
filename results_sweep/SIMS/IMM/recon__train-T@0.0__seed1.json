@@ -1,0 +1,253 @@
+{
+  "config": {
+    "dataset": "SIMS",
+    "method": "recon",
+    "train_regime": "T@0.0",
+    "protocol": "IMM",
+    "test_protocol": "",
+    "seed": 1,
+    "d": 64,
+    "layers": 2,
+    "nhead": 4,
+    "dropout": 0.1,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 32,
+    "max_epochs": 40,
+    "patience": 8,
+    "lambda_recon": 0.5,
+    "lambda_inv": 0.1,
+    "dro_eta": 0.01,
+    "dro_ema": 0.1,
+    "granularity": 8,
+    "label_bins": 5,
+    "inv_mode": "cmmd",
+    "alpha_temp": 1.0,
+    "dro_mode": "raw",
+    "dro_warmup_steps": 100,
+    "q_max_ratio": 0.0,
+    "text_encoder": "bert",
+    "bert_name": "auto",
+    "bert_lr": 2e-05,
+    "freeze_bert_layers": 0,
+    "amp": "bf16",
+    "num_workers": 3,
+    "verbose": 0,
+    "root": "datasets",
+    "out": "results_sweep"
+  },
+  "method_spec": {
+    "mask_train": true,
+    "recon": true,
+    "dro": false,
+    "inv": 0.0,
+    "cap": "uniform",
+    "inv_mode": "cmmd",
+    "alpha_temp": 1.0,
+    "dro_mode": "raw",
+    "q_max_ratio": 0.0
+  },
+  "cells": {
+    "U-lo": {
+      "mae": 0.4389717067357487,
+      "corr": 0.5485385962081899,
+      "acc2": 0.7778350515463917,
+      "f1": 0.780744809436442,
+      "acc2_has0": 0.7164113785557987,
+      "acc5": 0.41094091903719915,
+      "acc3": 0.5851203501094091
+    },
+    "U-hi": {
+      "mae": 0.5522641906592204,
+      "corr": 0.3203439488449237,
+      "acc2": 0.6206185567010309,
+      "f1": 0.6278119742386279,
+      "acc2_has0": 0.5894967177242888,
+      "acc5": 0.25733041575492344,
+      "acc3": 0.4214442013129103
+    },
+    "T-frag": {
+      "mae": 0.5701836105379026,
+      "corr": 0.2832254541351594,
+      "acc2": 0.6371134020618556,
+      "f1": 0.6442164499343079,
+      "acc2_has0": 0.6048140043763676,
+      "acc5": 0.23982494529540482,
+      "acc3": 0.3859956236323851
+    },
+    "NV-frag": {
+      "mae": 0.4149696278102549,
+      "corr": 0.5953714984510287,
+      "acc2": 0.788659793814433,
+      "f1": 0.7904703133976925,
+      "acc2_has0": 0.7190371991247265,
+      "acc5": 0.42538293216630196,
+      "acc3": 0.6087527352297594
+    },
+    "NONE": {
+      "mae": 0.3914961085147357,
+      "corr": 0.6321779935240659,
+      "acc2": 0.8221649484536082,
+      "f1": 0.8230608205772146,
+      "acc2_has0": 0.7417943107221007,
+      "acc5": 0.4573304157549234,
+      "acc3": 0.6323851203501094
+    }
+  },
+  "alpha": null,
+  "recon_hidden": {
+    "t": 128,
+    "a": 128,
+    "v": 128
+  },
+  "params": 102854401,
+  "best_epoch": 5,
+  "epochs_run": 14,
+  "val_best_mae": 0.40236771400821836,
+  "history": [
+    {
+      "epoch": 0,
+      "train_task": 0.5344271006291372,
+      "train_recon": 0.0,
+      "train_inv": 0.0,
+      "val_mae": 0.4563129150815177,
+      "val_acc2": 0.7467700258397932
+    },
+    {
+      "epoch": 1,
+      "train_task": 0.3908286742996751,
+      "train_recon": 0.0,
+      "train_inv": 0.0,
+      "val_mae": 0.44502971122008667,
+      "val_acc2": 0.7493540051679587
+    },
+    {
+      "epoch": 2,
+      "train_task": 0.2989403629860683,
+      "train_recon": 0.02328722658213119,
+      "train_inv": 0.0,
+      "val_mae": 0.4381705232683504,
+      "val_acc2": 0.7700258397932817
+    },
+    {
+      "epoch": 3,
+      "train_task": 0.23587956806721047,
+      "train_recon": 0.0,
+      "train_inv": 0.0,
+      "val_mae": 0.42021207165038377,
+      "val_acc2": 0.7493540051679587
+    },
+    {
+      "epoch": 4,
+      "train_task": 0.20640551782490915,
+      "train_recon": 0.0,
+      "train_inv": 0.0,
+      "val_mae": 0.4538742486844983,
+      "val_acc2": 0.7325581395348837
+    },
+    {
+      "epoch": 5,
+      "train_task": 0.18495032783837345,
+      "train_recon": 0.0,
+      "train_inv": 0.0,
+      "val_mae": 0.40236771400821836,
+      "val_acc2": 0.7803617571059431
+    },
+    {
+      "epoch": 6,
+      "train_task": 0.16311654160942948,
+      "train_recon": 0.015499678271555762,
+      "train_inv": 0.0,
+      "val_mae": 0.4178783917440134,
+      "val_acc2": 0.7881136950904393
+    },
+    {
+      "epoch": 7,
+      "train_task": 0.15675006667424363,
+      "train_recon": 0.0,
+      "train_inv": 0.0,
+      "val_mae": 0.43243670499507797,
+      "val_acc2": 0.772609819121447
+    },
+    {
+      "epoch": 8,
+      "train_task": 0.1355397819775587,
+      "train_recon": 0.16012662474872075,
+      "train_inv": 0.0,
+      "val_mae": 0.42382742431864406,
+      "val_acc2": 0.7816537467700257
+    },
+    {
+      "epoch": 9,
+      "train_task": 0.13633316180162264,
+      "train_recon": 0.0,
+      "train_inv": 0.0,
+      "val_mae": 0.41858292413516,
+      "val_acc2": 0.7790697674418605
+    },
+    {
+      "epoch": 10,
+      "train_task": 0.12883702757065757,
+      "train_recon": 0.0,
+      "train_inv": 0.0,
+      "val_mae": 0.42188276190376073,
+      "val_acc2": 0.7648578811369509
+    },
+    {
+      "epoch": 11,
+      "train_task": 0.12293769419193268,
+      "train_recon": 0.0,
+      "train_inv": 0.0,
+      "val_mae": 0.41359512452362923,
+      "val_acc2": 0.7881136950904393
+    },
+    {
+      "epoch": 12,
+      "train_task": 0.11067948612379051,
+      "train_recon": 0.0,
+      "train_inv": 0.0,
+      "val_mae": 0.42918858556240275,
+      "val_acc2": 0.772609819121447
+    },
+    {
+      "epoch": 13,
+      "train_task": 0.11108000149503786,
+      "train_recon": 0.0,
+      "train_inv": 0.0,
+      "val_mae": 0.44288280681429204,
+      "val_acc2": 0.7416020671834626
+    }
+  ],
+  "dro_q": null,
+  "dro_reference": null,
+  "dro_running": null,
+  "wall_seconds": 121.8,
+  "diagnostics": {
+    "text_repr": {
+      "cos_offdiag": 0.30680227279663086,
+      "eff_rank_raw": 13.452997207641602,
+      "part_ratio_raw": 5.447530269622803,
+      "eff_rank_centred": 15.347546577453613,
+      "part_ratio_centred": 5.622392654418945,
+      "emb_std": 1.007293701171875
+    },
+    "fused_repr": {
+      "cos_offdiag": 0.23466284573078156,
+      "eff_rank_raw": 20.69287109375,
+      "part_ratio_raw": 8.990490913391113,
+      "eff_rank_centred": 21.652118682861328,
+      "part_ratio_centred": 8.668646812438965,
+      "emb_std": 0.2441231608390808
+    }
+  },
+  "test_protocol": "IMM",
+  "freeze_bert_layers": 0,
+  "text_encoder": "bert",
+  "bert_name": "bert-base-chinese",
+  "env": {
+    "device": "cuda",
+    "torch": "2.14.0+cu130",
+    "platform": "Linux-5.15.0-101-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12"
+  }
+}

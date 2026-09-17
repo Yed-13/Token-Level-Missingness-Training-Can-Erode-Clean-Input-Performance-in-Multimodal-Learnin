@@ -1,0 +1,72 @@
+{
+  "config": {
+    "dataset": "MOSI",
+    "method": "recon",
+    "train_regime": "T-frag",
+    "protocol": "IMM",
+    "test_protocol": "",
+    "validation_regime": "",
+    "save_checkpoint": 1,
+    "seed": 0,
+    "d": 64,
+    "layers": 2,
+    "nhead": 4,
+    "dropout": 0.1,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 32,
+    "max_epochs": 40,
+    "patience": 8,
+    "lambda_inv": 0.1,
+    "dro_eta": 0.01,
+    "dro_ema": 0.1,
+    "granularity": 8,
+    "label_bins": 5,
+    "inv_mode": "cmmd",
+    "alpha_temp": 1.0,
+    "dro_mode": "raw",
+    "dro_warmup_steps": 100,
+    "q_max_ratio": 0.0,
+    "text_encoder": "bert",
+    "bert_name": "auto",
+    "bert_lr": 2e-05,
+    "freeze_bert_layers": 0,
+    "amp": "bf16",
+    "num_workers": 0,
+    "torch_threads": 4,
+    "text_mask_mode": "remove",
+    "subsample_train": 0,
+    "verbose": 1,
+    "root": "datasets"
+  },
+  "env": {
+    "device": "mps",
+    "torch": "2.14.0",
+    "bert_attention": "eager",
+    "torch_threads": 4,
+    "platform": "macOS-15.7.4-arm64-arm-64bit",
+    "python": "3.12.14"
+  },
+  "rows": [
+    {
+      "coefficient": 0.0,
+      "acc2": 0.5442073170731707,
+      "mae": 1.4149517309159563,
+      "best_epoch": 3,
+      "epochs_run": 12,
+      "result_sha256": "3f31278e735bf32673822cda894978a3f432db5934a7edbe24faf9c1c19142a4",
+      "result_path": "paper/data/control_runs/loss0.json",
+      "source_result_path": "results_controls_mps/loss0/MOSI/IMM/recon__train-T-frag__seed0.json"
+    },
+    {
+      "coefficient": 0.5,
+      "acc2": 0.573170731707317,
+      "mae": 1.3812946652553693,
+      "best_epoch": 3,
+      "epochs_run": 12,
+      "result_sha256": "31d3331150afd6fd2b788ffffe25c260325c588c88ff3f2bca35751bc50f3adf",
+      "result_path": "paper/data/control_runs/loss05.json",
+      "source_result_path": "results_controls_mps/loss05/MOSI/IMM/recon__train-T-frag__seed0.json"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+
+\begin{tabular}{llccc}
+\toprule
+ & & \multicolumn{2}{c}{clean-input Acc-2 $\uparrow$} & \\
+\cmidrule(lr){3-4}
+Dataset & Training scheme & benign & text-scarce & change (pts) \\
+\midrule
+CMU-MOSI & \tokenlevel{} baseline & 0.835 $\pm$ 0.007 & 0.627 $\pm$ 0.076 & -20.8 $\pm$ 7.9 \\
+ & M1: \modlevel{} training & 0.839 $\pm$ 0.006 & 0.837 $\pm$ 0.004 & -0.2 $\pm$ 0.3 \\
+ & M2: freeze embed.\ $+$ 6 blk. & 0.823 $\pm$ 0.007 & 0.586 $\pm$ 0.028 & -23.7 $\pm$ 2.2 \\
+ & M3: encoder LR $5\times10^{-6}$ & 0.833 $\pm$ 0.011 & 0.595 $\pm$ 0.026 & -23.9 $\pm$ 3.7 \\
+\addlinespace
+CH-SIMS & \tokenlevel{} baseline & 0.810 $\pm$ 0.011 & 0.764 $\pm$ 0.022 & -4.6 $\pm$ 2.3 \\
+ & M1: \modlevel{} training & 0.805 $\pm$ 0.009 & 0.814 $\pm$ 0.013 & +0.9 $\pm$ 0.7 \\
+ & M2: freeze embed.\ $+$ 6 blk. & 0.828 $\pm$ 0.006 & 0.759 $\pm$ 0.029 & -6.9 $\pm$ 2.4 \\
+ & M3: encoder LR $5\times10^{-6}$ & 0.822 $\pm$ 0.002 & 0.770 $\pm$ 0.018 & -5.2 $\pm$ 1.6 \\
+\bottomrule
+\end{tabular}

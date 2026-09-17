@@ -1,0 +1,16 @@
+
+\begin{tabular}{llccc}
+\toprule
+ & & benign & \multicolumn{2}{c}{clean-input Acc-2 change (pts)} \\
+\cmidrule(lr){4-5}
+Text encoder & Dataset & Acc-2 & \tokenlevel{} & \modlevel{} \\
+\midrule
+BERT & CMU-MOSI & 0.835 $\pm$ 0.007 & -20.8 $\pm$ 7.9 & -0.8 $\pm$ 1.6 \\
+ & CMU-MOSEI ($n{=}1284$) & 0.839 $\pm$ 0.005 & -12.7 $\pm$ 4.2 & -1.7 $\pm$ 0.4 \\
+ & CH-SIMS & 0.810 $\pm$ 0.011 & -4.6 $\pm$ 2.3 & +0.1 $\pm$ 2.0 \\
+ & CMU-MOSEI & 0.842 $\pm$ 0.012 & -3.2 $\pm$ 1.1 & -0.7 $\pm$ 0.8 \\
+\addlinespace
+RoBERTa & CMU-MOSI & 0.853 $\pm$ 0.011 & -27.7 $\pm$ 3.7 & -2.0 $\pm$ 2.4 \\
+ & CMU-MOSEI ($n{=}1284$) & 0.838 $\pm$ 0.002 & -18.1 $\pm$ 0.7 & -2.2 $\pm$ 2.2 \\
+\bottomrule
+\end{tabular}

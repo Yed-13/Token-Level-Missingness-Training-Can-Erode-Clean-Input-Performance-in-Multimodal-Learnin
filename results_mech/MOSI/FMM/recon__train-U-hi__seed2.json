@@ -1,0 +1,309 @@
+{
+  "config": {
+    "dataset": "MOSI",
+    "method": "recon",
+    "train_regime": "U-hi",
+    "protocol": "FMM",
+    "test_protocol": "",
+    "seed": 2,
+    "d": 64,
+    "layers": 2,
+    "nhead": 4,
+    "dropout": 0.1,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 32,
+    "max_epochs": 40,
+    "patience": 8,
+    "lambda_recon": 0.5,
+    "lambda_inv": 0.1,
+    "dro_eta": 0.01,
+    "dro_ema": 0.1,
+    "granularity": 8,
+    "label_bins": 5,
+    "inv_mode": "cmmd",
+    "alpha_temp": 1.0,
+    "dro_mode": "raw",
+    "dro_warmup_steps": 100,
+    "q_max_ratio": 0.0,
+    "text_encoder": "bert",
+    "bert_name": "auto",
+    "bert_lr": 2e-05,
+    "freeze_bert_layers": 0,
+    "amp": "bf16",
+    "num_workers": 3,
+    "verbose": 0,
+    "root": "datasets",
+    "out": "results_mech"
+  },
+  "method_spec": {
+    "mask_train": true,
+    "recon": true,
+    "dro": false,
+    "inv": 0.0,
+    "cap": "uniform",
+    "inv_mode": "cmmd",
+    "alpha_temp": 1.0,
+    "dro_mode": "raw",
+    "q_max_ratio": 0.0
+  },
+  "cells": {
+    "U-lo": {
+      "mae": 0.9167905374753232,
+      "corr": 0.6997359033062024,
+      "acc2": 0.7646341463414634,
+      "f1": 0.7657732158679403,
+      "acc2_has0": 0.7597667638483966,
+      "acc7": 0.3880466472303207,
+      "acc5": 0.3530612244897959
+    },
+    "U-hi": {
+      "mae": 1.1573408205681222,
+      "corr": 0.5185334344845676,
+      "acc2": 0.6509146341463414,
+      "f1": 0.6437562786870531,
+      "acc2_has0": 0.6556851311953353,
+      "acc7": 0.29183673469387755,
+      "acc5": 0.28775510204081634
+    },
+    "T-frag": {
+      "mae": 1.2220430880480884,
+      "corr": 0.45852174471793294,
+      "acc2": 0.6170731707317073,
+      "f1": 0.6105855263293197,
+      "acc2_has0": 0.6236151603498542,
+      "acc7": 0.2556851311953353,
+      "acc5": 0.24139941690962102
+    },
+    "NV-frag": {
+      "mae": 0.83274736121601,
+      "corr": 0.7539715234018282,
+      "acc2": 0.8064024390243902,
+      "f1": 0.8075052479914048,
+      "acc2_has0": 0.8005830903790088,
+      "acc7": 0.42478134110787175,
+      "acc5": 0.39067055393586003
+    },
+    "NONE": {
+      "mae": 0.7962073744342556,
+      "corr": 0.7811786301002013,
+      "acc2": 0.8292682926829268,
+      "f1": 0.8302610771528497,
+      "acc2_has0": 0.8206997084548106,
+      "acc7": 0.4402332361516035,
+      "acc5": 0.39067055393586003
+    }
+  },
+  "alpha": null,
+  "recon_hidden": {
+    "t": 128,
+    "a": 128,
+    "v": 128
+  },
+  "params": 110050689,
+  "best_epoch": 12,
+  "epochs_run": 21,
+  "val_best_mae": 1.0833481540456087,
+  "history": [
+    {
+      "epoch": 0,
+      "train_task": 1.2231919832318743,
+      "train_recon": 0.7689886880440875,
+      "train_inv": 0.0,
+      "val_mae": 1.2794402006151375,
+      "val_acc2": 0.662037037037037
+    },
+    {
+      "epoch": 1,
+      "train_task": 1.1119176271919893,
+      "train_recon": 0.4923709393290344,
+      "train_inv": 0.0,
+      "val_mae": 1.2491425741707913,
+      "val_acc2": 0.6921296296296295
+    },
+    {
+      "epoch": 2,
+      "train_task": 1.0092916336386375,
+      "train_recon": 0.4623789062195478,
+      "train_inv": 0.0,
+      "val_mae": 1.2171565687292007,
+      "val_acc2": 0.7013888888888888
+    },
+    {
+      "epoch": 3,
+      "train_task": 1.0109572945354142,
+      "train_recon": 0.4936178048080373,
+      "train_inv": 0.0,
+      "val_mae": 1.1477386799832099,
+      "val_acc2": 0.7199074074074074
+    },
+    {
+      "epoch": 4,
+      "train_task": 0.989224070329161,
+      "train_recon": 0.5381888199446728,
+      "train_inv": 0.0,
+      "val_mae": 1.1241519137501195,
+      "val_acc2": 0.7199074074074074
+    },
+    {
+      "epoch": 5,
+      "train_task": 0.9581102641572091,
+      "train_recon": 0.6135474500997787,
+      "train_inv": 0.0,
+      "val_mae": 1.1739937290874631,
+      "val_acc2": 0.6851851851851852
+    },
+    {
+      "epoch": 6,
+      "train_task": 0.8949308766754246,
+      "train_recon": 0.5690786205348196,
+      "train_inv": 0.0,
+      "val_mae": 1.1563611953279338,
+      "val_acc2": 0.7013888888888888
+    },
+    {
+      "epoch": 7,
+      "train_task": 0.9240584458888876,
+      "train_recon": 0.5443339999591079,
+      "train_inv": 0.0,
+      "val_mae": 1.1318807946802747,
+      "val_acc2": 0.7222222222222222
+    },
+    {
+      "epoch": 8,
+      "train_task": 0.8609110269219704,
+      "train_recon": 0.44604434189024,
+      "train_inv": 0.0,
+      "val_mae": 1.1402521655288846,
+      "val_acc2": 0.7060185185185186
+    },
+    {
+      "epoch": 9,
+      "train_task": 0.8665300871352912,
+      "train_recon": 0.5100542672698,
+      "train_inv": 0.0,
+      "val_mae": 1.1696018933859453,
+      "val_acc2": 0.6990740740740741
+    },
+    {
+      "epoch": 10,
+      "train_task": 0.8318596666104325,
+      "train_recon": 0.545739875497105,
+      "train_inv": 0.0,
+      "val_mae": 1.0993097020418885,
+      "val_acc2": 0.7199074074074074
+    },
+    {
+      "epoch": 11,
+      "train_task": 0.8718598148904485,
+      "train_recon": 0.563084459936136,
+      "train_inv": 0.0,
+      "val_mae": 1.1181896455162996,
+      "val_acc2": 0.7106481481481481
+    },
+    {
+      "epoch": 12,
+      "train_task": 0.8391287623907546,
+      "train_recon": 0.4912505294675025,
+      "train_inv": 0.0,
+      "val_mae": 1.0833481540456087,
+      "val_acc2": 0.7407407407407407
+    },
+    {
+      "epoch": 13,
+      "train_task": 0.7815887079432003,
+      "train_recon": 0.47229825466221365,
+      "train_inv": 0.0,
+      "val_mae": 1.0954768664191383,
+      "val_acc2": 0.7152777777777778
+    },
+    {
+      "epoch": 14,
+      "train_task": 0.7915946315753497,
+      "train_recon": 0.5096316506558118,
+      "train_inv": 0.0,
+      "val_mae": 1.1321770178568935,
+      "val_acc2": 0.7222222222222222
+    },
+    {
+      "epoch": 15,
+      "train_task": 0.7627295931551686,
+      "train_recon": 0.4963831141173283,
+      "train_inv": 0.0,
+      "val_mae": 1.1089136373398085,
+      "val_acc2": 0.712962962962963
+    },
+    {
+      "epoch": 16,
+      "train_task": 0.8052899579392787,
+      "train_recon": 0.5204758139971261,
+      "train_inv": 0.0,
+      "val_mae": 1.1097619910297436,
+      "val_acc2": 0.7152777777777777
+    },
+    {
+      "epoch": 17,
+      "train_task": 0.7935340070278845,
+      "train_recon": 0.5351571968039991,
+      "train_inv": 0.0,
+      "val_mae": 1.1510363561487615,
+      "val_acc2": 0.712962962962963
+    },
+    {
+      "epoch": 18,
+      "train_task": 0.7416613196658197,
+      "train_recon": 0.5214086696737652,
+      "train_inv": 0.0,
+      "val_mae": 1.1160693574029805,
+      "val_acc2": 0.7291666666666667
+    },
+    {
+      "epoch": 19,
+      "train_task": 0.7683243521277406,
+      "train_recon": 0.581574731898085,
+      "train_inv": 0.0,
+      "val_mae": 1.121454828886486,
+      "val_acc2": 0.6990740740740741
+    },
+    {
+      "epoch": 20,
+      "train_task": 0.7731262883664662,
+      "train_recon": 0.6029193388338773,
+      "train_inv": 0.0,
+      "val_mae": 1.1192891191707428,
+      "val_acc2": 0.712962962962963
+    }
+  ],
+  "dro_q": null,
+  "dro_reference": null,
+  "dro_running": null,
+  "wall_seconds": 161.7,
+  "diagnostics": {
+    "text_repr": {
+      "cos_offdiag": 0.2120342254638672,
+      "eff_rank_raw": 9.718823432922363,
+      "part_ratio_raw": 4.515481472015381,
+      "eff_rank_centred": 10.040606498718262,
+      "part_ratio_centred": 4.180417060852051,
+      "emb_std": 1.0254020690917969
+    },
+    "fused_repr": {
+      "cos_offdiag": 0.3285875916481018,
+      "eff_rank_raw": 7.9773101806640625,
+      "part_ratio_raw": 3.9195144176483154,
+      "eff_rank_centred": 8.720547676086426,
+      "part_ratio_centred": 3.9114179611206055,
+      "emb_std": 0.6482511162757874
+    }
+  },
+  "test_protocol": "FMM",
+  "freeze_bert_layers": 0,
+  "text_encoder": "bert",
+  "bert_name": "bert-base-uncased",
+  "env": {
+    "device": "cuda",
+    "torch": "2.14.0+cu130",
+    "platform": "Linux-5.15.0-101-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12"
+  }
+}

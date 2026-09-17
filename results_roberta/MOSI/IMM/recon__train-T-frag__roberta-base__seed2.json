@@ -1,0 +1,234 @@
+{
+  "config": {
+    "dataset": "MOSI",
+    "method": "recon",
+    "train_regime": "T-frag",
+    "protocol": "IMM",
+    "test_protocol": "",
+    "seed": 2,
+    "d": 64,
+    "layers": 2,
+    "nhead": 4,
+    "dropout": 0.1,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 32,
+    "max_epochs": 40,
+    "patience": 8,
+    "lambda_recon": 0.5,
+    "lambda_inv": 0.1,
+    "dro_eta": 0.01,
+    "dro_ema": 0.1,
+    "granularity": 8,
+    "label_bins": 5,
+    "inv_mode": "cmmd",
+    "alpha_temp": 1.0,
+    "dro_mode": "raw",
+    "dro_warmup_steps": 100,
+    "q_max_ratio": 0.0,
+    "text_encoder": "bert",
+    "bert_name": "roberta-base",
+    "bert_lr": 2e-05,
+    "freeze_bert_layers": 0,
+    "amp": "bf16",
+    "num_workers": 2,
+    "torch_threads": 3,
+    "subsample_train": 0,
+    "verbose": 0,
+    "root": "datasets",
+    "out": "results_roberta"
+  },
+  "method_spec": {
+    "mask_train": true,
+    "recon": true,
+    "dro": false,
+    "inv": 0.0,
+    "cap": "uniform",
+    "inv_mode": "cmmd",
+    "alpha_temp": 1.0,
+    "dro_mode": "raw",
+    "q_max_ratio": 0.0
+  },
+  "cells": {
+    "U-lo": {
+      "mae": 1.4245553649418903,
+      "corr": 0.2528284223355328,
+      "acc2": 0.5579268292682926,
+      "f1": 0.5470014748062033,
+      "acc2_has0": 0.5664723032069972,
+      "acc7": 0.17725947521865887,
+      "acc5": 0.1769679300291545
+    },
+    "U-hi": {
+      "mae": 1.4339013023253084,
+      "corr": 0.23843473553948907,
+      "acc2": 0.547560975609756,
+      "f1": 0.5354521084976872,
+      "acc2_has0": 0.5556851311953352,
+      "acc7": 0.17434402332361518,
+      "acc5": 0.17551020408163265
+    },
+    "T-frag": {
+      "mae": 1.420934913157548,
+      "corr": 0.25655227340810793,
+      "acc2": 0.561280487804878,
+      "f1": 0.5504829830301443,
+      "acc2_has0": 0.5693877551020409,
+      "acc7": 0.18279883381924197,
+      "acc5": 0.17900874635568514
+    },
+    "NV-frag": {
+      "mae": 1.4340751027965337,
+      "corr": 0.23388089180283994,
+      "acc2": 0.5426829268292683,
+      "f1": 0.5306998041754476,
+      "acc2_has0": 0.5518950437317784,
+      "acc7": 0.17667638483965015,
+      "acc5": 0.1772594752186589
+    },
+    "NONE": {
+      "mae": 1.4226023116673048,
+      "corr": 0.25784787551927063,
+      "acc2": 0.5579268292682927,
+      "f1": 0.5473873584224153,
+      "acc2_has0": 0.5670553935860059,
+      "acc7": 0.1749271137026239,
+      "acc5": 0.1749271137026239
+    }
+  },
+  "alpha": null,
+  "recon_hidden": {
+    "t": 128,
+    "a": 128,
+    "v": 128
+  },
+  "params": 125214081,
+  "best_epoch": 2,
+  "epochs_run": 11,
+  "val_best_mae": 1.3347956085309192,
+  "history": [
+    {
+      "epoch": 0,
+      "train_task": 1.2913286663661494,
+      "train_recon": 0.4147695774601256,
+      "train_inv": 0.0,
+      "val_mae": 1.3642802312644808,
+      "val_acc2": 0.6435185185185185
+    },
+    {
+      "epoch": 1,
+      "train_task": 1.2200718969570885,
+      "train_recon": 0.10458885467498102,
+      "train_inv": 0.0,
+      "val_mae": 1.353090466760652,
+      "val_acc2": 0.6180555555555556
+    },
+    {
+      "epoch": 2,
+      "train_task": 1.1792117828892028,
+      "train_recon": 0.047339798226906135,
+      "train_inv": 0.0,
+      "val_mae": 1.3347956085309192,
+      "val_acc2": 0.625
+    },
+    {
+      "epoch": 3,
+      "train_task": 1.1435096141333891,
+      "train_recon": 0.057489707555354944,
+      "train_inv": 0.0,
+      "val_mae": 1.370552155193283,
+      "val_acc2": 0.5925925925925926
+    },
+    {
+      "epoch": 4,
+      "train_task": 1.1165488486720765,
+      "train_recon": 0.04163610563842678,
+      "train_inv": 0.0,
+      "val_mae": 1.3539983824090667,
+      "val_acc2": 0.5740740740740741
+    },
+    {
+      "epoch": 5,
+      "train_task": 1.118598232388125,
+      "train_recon": 0.02813376500227741,
+      "train_inv": 0.0,
+      "val_mae": 1.349168891339323,
+      "val_acc2": 0.6180555555555556
+    },
+    {
+      "epoch": 6,
+      "train_task": 1.062425360872738,
+      "train_recon": 0.12246670826944607,
+      "train_inv": 0.0,
+      "val_mae": 1.3756281406207895,
+      "val_acc2": 0.5879629629629629
+    },
+    {
+      "epoch": 7,
+      "train_task": 1.049541157725444,
+      "train_recon": 0.02632796778300098,
+      "train_inv": 0.0,
+      "val_mae": 1.3469586339840203,
+      "val_acc2": 0.6064814814814815
+    },
+    {
+      "epoch": 8,
+      "train_task": 1.0109253375329703,
+      "train_recon": 0.050203703459920916,
+      "train_inv": 0.0,
+      "val_mae": 1.4397912097679997,
+      "val_acc2": 0.5671296296296295
+    },
+    {
+      "epoch": 9,
+      "train_task": 1.0063180429541805,
+      "train_recon": 0.024206983383942244,
+      "train_inv": 0.0,
+      "val_mae": 1.4675338743295212,
+      "val_acc2": 0.5763888888888888
+    },
+    {
+      "epoch": 10,
+      "train_task": 0.9870508218480047,
+      "train_recon": 0.12445031596214229,
+      "train_inv": 0.0,
+      "val_mae": 1.3779565930106235,
+      "val_acc2": 0.5833333333333334
+    }
+  ],
+  "dro_q": null,
+  "dro_reference": null,
+  "dro_running": null,
+  "wall_seconds": 103.1,
+  "diagnostics": {
+    "text_repr": {
+      "cos_offdiag": 0.9981529712677002,
+      "eff_rank_raw": 2.5751829147338867,
+      "part_ratio_raw": 1.3772587776184082,
+      "eff_rank_centred": 34.6356315612793,
+      "part_ratio_centred": 16.631988525390625,
+      "emb_std": 0.9780147075653076
+    },
+    "fused_repr": {
+      "cos_offdiag": 0.3450380861759186,
+      "eff_rank_raw": 11.161587715148926,
+      "part_ratio_raw": 5.030141353607178,
+      "eff_rank_centred": 11.54926586151123,
+      "part_ratio_centred": 4.783663749694824,
+      "emb_std": 0.2609553933143616
+    }
+  },
+  "test_protocol": "IMM",
+  "subsample_train": 0,
+  "n_train": 1284,
+  "freeze_bert_layers": 0,
+  "text_encoder": "bert",
+  "bert_name": "roberta-base",
+  "env": {
+    "device": "cuda",
+    "torch": "2.14.0+cu130",
+    "torch_threads": 3,
+    "platform": "Linux-5.15.0-101-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12"
+  }
+}

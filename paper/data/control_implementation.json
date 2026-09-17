@@ -1,0 +1,14 @@
+{
+  "files": {
+    "parm/train.py": "01181be990a74bcf4707b31d25564abfd262c990027bd647f340b2930338f584",
+    "parm/seeding.py": "517bf555d9303db25087571f0184469c6966165cd8b119f6cb31369278f09343",
+    "parm/data/datasets.py": "41ed6e374016b56737e359849e1e37668892c8b30dc1f8f685937686cd65ab2e",
+    "parm/data/masking.py": "9788d3e1b391aa463297c076fa6ad222f5e94fb0b493d64a502be2077861eacd",
+    "parm/data/download.py": "4ba2cc3bf674dc7d6116de70692905935b23b8cfbe9ad4735fc507f72d274547",
+    "parm/metrics.py": "0714ddad97be73b69367a4b46a3853f9752005e80beba99f2fe707df5ef182dc",
+    "parm/models/backbones/fusion.py": "730d3eb965eb30e376e4e63575ceb06b3bd47a904db1da25f2a1fbb9ddb4f9d4",
+    "requirements-controls-local.txt": "433fb9db1fe0d233a77cdb5c03a4d4e3f3a655e5841b5cb4610bd73295b58d4b"
+  },
+  "git_base": "e259f950847dcd8e6242e2223e1f1f26b77775ab",
+  "description": "File hashes identify the working implementation; Git base alone does not include the uncommitted control changes."
+}

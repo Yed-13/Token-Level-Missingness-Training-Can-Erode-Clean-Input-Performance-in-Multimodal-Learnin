@@ -1,0 +1,12 @@
+{
+  "dataset_sha256": "78e0f8b5ef8ff71558e7307848fc1fa929ecb078203f565ab22b9daab2e02524",
+  "bert_revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+  "bert_sha256": "68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3",
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "attention": "sdpa",
+  "precision": "bf16",
+  "conditions": 40,
+  "concurrent_jobs": 4
+}

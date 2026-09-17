@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+*.pt
+*.pth
+*.safetensors
+*.pkl
+*.npz
+*.aux
+*.log
+*.out
+*.blg
+*.spl
+hf-cache/
+deliverables/

@@ -1,0 +1,10 @@
+# Local Metal control environment; archived CUDA runs use their recorded environments.
+torch==2.14.0
+transformers==4.57.6
+tokenizers==0.22.2
+huggingface-hub==0.36.2
+safetensors==0.8.0
+numpy==2.5.3
+scipy==1.18.1
+scikit-learn==1.9.1
+matplotlib==3.11.2
