@@ -107,6 +107,19 @@ token-level changes are -9.63 and -17.62 points, versus +0.15 and +0.24 points
 for modality-level training. The result records include all seeds, histories,
 selected epochs, common test scores, and checkpoint/source hashes.
 
+## Archived uncertainty sensitivity
+
+`python scripts/summarize_archived_uncertainty.py` recomputes 11 archived
+text-scarce-minus-benign comparisons using separate-group sample statistics and
+Welch intervals. Output is `analysis/data/archived_uncertainty.json`, including
+all raw group values and source-record hashes. This supersedes the interpretation
+of `paired_uncertainty.json`, which remains a historical analysis record.
+The unpaired calculation treats independence as a working assumption; shared
+initialization seeds can induce covariance. It does not repair the historical
+validation-mask procedure or constitute stable-seed replication. The controlled
+MOSI studies retain their paired analysis. No new training runs were added for
+this uncertainty revision.
+
 ## Layout
 
 - `parm/`: data loading, masking, models, training, and evaluation.
