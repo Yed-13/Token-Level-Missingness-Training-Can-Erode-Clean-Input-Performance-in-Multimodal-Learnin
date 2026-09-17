@@ -76,6 +76,3 @@ must not be pooled with this matrix.
 - `results*/`: per-run configurations and measurements.
 - `tests/`: reproducibility, evidence, and control-design checks.
 - `datasets/alpha_*.json`: calibration metadata.
-
-This code-and-results release excludes manuscript PDFs, LaTeX sources,
-publication figures, review notes, dataset binaries, and model weights.
