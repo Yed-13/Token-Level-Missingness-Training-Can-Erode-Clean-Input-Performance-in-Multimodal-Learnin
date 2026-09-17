@@ -1,7 +1,7 @@
 # Clean-input performance under missingness training
 
 Experiment code and results for *Token-Level Missingness Training Can Erode
-Clean-Input Performance in Multimodal Learning*.
+Clean-Input Performance in Multimodal Sentiment Learning*.
 
 ## Reproduce numerical results
 
@@ -17,8 +17,11 @@ python -m unittest discover -s tests -q
 
 The analysis keeps the archived studies separate: 388 fine-tuned-text-pathway
 runs, 24 frozen-feature runs, and the independent 40-run CUDA control matrix.
-Statistics are descriptive, with seed-paired differences and population standard
-deviations. Tests recompute the control summary and verify raw-record hashes.
+Archived summaries retain their original population-standard-deviation fields.
+The review-control summaries use sample standard deviations and pointwise paired
+t intervals across training seeds. Tests recompute summaries and verify
+raw-record hashes. Intervals condition on fixed data splits and approximately
+normal seed differences; they do not measure subset-selection uncertainty.
 
 ## Re-run experiments
 
@@ -67,6 +70,42 @@ points for token-level training at weights 0 and 0.5, versus -1.10 and -0.61
 for modality-level training. This is an end-to-end system comparison; it does
 not isolate an encoder gradient path. Separate partial Metal-runtime results
 must not be pooled with this matrix.
+
+## Shared selection, clean anchor, and common test suites
+
+The review study adds 25 full-MOSI trajectories: five seeds for each of
+IMM/U-lo, IMM/T-frag, FMM/U-lo, FMM/T-frag, and a shared clean-training anchor
+with all missing rates zero. Each trajectory runs exactly 40 epochs and yields
+two checkpoints: minimum clean-validation MAE and fixed epoch 40. Both use the
+same trajectory, not independent repetitions. Test scores never select epochs.
+
+All 40 original CUDA checkpoints and these 50 selected checkpoints are evaluated
+on common deterministic clean, token-erasure, and whole-modality suites. Each
+corrupted suite averages five mask draws. Mixture scores vary clean-input weight
+from 0 to 1, splitting the remainder equally between the two text-scarce suites;
+these weights are sensitivity scenarios, not measured deployment frequencies.
+
+Recompute the bundled results without training or checkpoints:
+
+```bash
+python scripts/summarize_review.py common
+python scripts/summarize_review.py selection
+python -m unittest discover -s tests -q
+```
+
+On a provisioned CUDA host, with the recorded inputs and original control
+checkpoints available, run `python scripts/run_review_jobs.py evaluate --jobs 4`
+and `python scripts/run_review_jobs.py train --jobs 4`. The runners refuse local
+CPU/MPS execution. Released result directories already exist: use a separate
+checkout without those output directories for a fresh replication. Checkpoint
+binaries are not bundled. Training uses the pinned CUDA control environment.
+
+Relative to benign training, token-level clean-accuracy changes are -8.96 points
+under clean-validation selection and -16.28 points at epoch 40; modality-level
+changes are +0.49 and -0.12 points. Relative to clean training, the text-scarce
+token-level changes are -9.63 and -17.62 points, versus +0.15 and +0.24 points
+for modality-level training. The result records include all seeds, histories,
+selected epochs, common test scores, and checkpoint/source hashes.
 
 ## Layout
 
