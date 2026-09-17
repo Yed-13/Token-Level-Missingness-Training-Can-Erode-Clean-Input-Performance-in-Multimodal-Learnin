@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
-    pilot = json.loads((ROOT / "paper/data/control_pilot.json").read_text())
+    pilot = json.loads((ROOT / "analysis/data/control_pilot.json").read_text())
     evaluations, rows = [], []
     for condition, reference in zip(("loss0", "loss05"), pilot["rows"]):
         path = ROOT / f"results_controls_mps/{condition}/MOSI/IMM/recon__train-T-frag__seed0.common_eval.json"
@@ -23,10 +23,7 @@ def main():
                              acc2=cells["T-frag"]["acc2"], mae=cells["T-frag"]["mae"]))
         evaluations.append(record)
     result = dict(rows=rows, evaluations=evaluations)
-    (ROOT / "paper/data/control_common_eval.json").write_text(json.dumps(result, indent=2) + "\n")
-    sys.path.insert(0, str(ROOT))
-    from paper.make_tables import t9
-    t9()
+    (ROOT / "analysis/data/control_common_eval.json").write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(rows, indent=2))
 
 

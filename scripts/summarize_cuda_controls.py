@@ -14,7 +14,7 @@ from summarize_reconstruction_controls import summarize
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--skip-tables", action="store_true",
-                        help="Validate/archive on the training host without manuscript dependencies")
+                        help="Accepted for compatibility; this release writes JSON summaries only")
     args = parser.parse_args()
     verify_sources()
     configs = list(cuda_configurations())
@@ -22,7 +22,7 @@ def main():
     records = [validate(path, cfg) for path, cfg in zip(paths, configs)]
     result = summarize(records)
     result["study"] = "cuda_factorial_20260917"
-    archive = ROOT / "paper/data/control_matrix_cuda_runs"
+    archive = ROOT / "analysis/data/control_matrix_cuda_runs"
     archive.mkdir(exist_ok=True)
     provenance = []
     for path, cfg in zip(paths, configs):
@@ -38,12 +38,8 @@ def main():
                                checkpoint=str(checkpoint.relative_to(ROOT)),
                                checkpoint_sha256=digest))
     result["provenance"] = provenance
-    (ROOT / "paper/data/control_matrix_cuda.json").write_text(
+    (ROOT / "analysis/data/control_matrix_cuda.json").write_text(
         json.dumps(result, indent=2) + "\n")
-    if not args.skip_tables:
-        sys.path.insert(0, str(ROOT))
-        from paper.make_tables import t10
-        t10("control_matrix_cuda")
     print(json.dumps({k: result[k] for k in ("rows", "protocol_change_contrasts")}, indent=2))
 
 

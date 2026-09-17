@@ -55,7 +55,7 @@
       "best_epoch": 3,
       "epochs_run": 12,
       "result_sha256": "3f31278e735bf32673822cda894978a3f432db5934a7edbe24faf9c1c19142a4",
-      "result_path": "paper/data/control_runs/loss0.json",
+      "result_path": "analysis/data/control_runs/loss0.json",
       "source_result_path": "results_controls_mps/loss0/MOSI/IMM/recon__train-T-frag__seed0.json"
     },
     {
@@ -65,7 +65,7 @@
       "best_epoch": 3,
       "epochs_run": 12,
       "result_sha256": "31d3331150afd6fd2b788ffffe25c260325c588c88ff3f2bca35751bc50f3adf",
-      "result_path": "paper/data/control_runs/loss05.json",
+      "result_path": "analysis/data/control_runs/loss05.json",
       "source_result_path": "results_controls_mps/loss05/MOSI/IMM/recon__train-T-frag__seed0.json"
     }
   ]

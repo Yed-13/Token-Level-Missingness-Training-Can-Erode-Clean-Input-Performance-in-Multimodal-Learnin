@@ -81,7 +81,7 @@ def main():
     paths = [result_path(cfg) for cfg in configurations()]
     records = [validate(path, cfg) for path, cfg in zip(paths, configurations())]
     result = summarize(records)
-    archive = ROOT / "paper/data/control_matrix_runs"
+    archive = ROOT / "analysis/data/control_matrix_runs"
     archive.mkdir(exist_ok=True)
     provenance = []
     for path, rec in zip(paths, records):
@@ -93,10 +93,7 @@ def main():
         provenance.append(dict(path=str(destination.relative_to(ROOT)),
                                sha256=hashlib.sha256(content).hexdigest()))
     result["provenance"] = provenance
-    (ROOT / "paper/data/control_matrix.json").write_text(json.dumps(result, indent=2) + "\n")
-    sys.path.insert(0, str(ROOT))
-    from paper.make_tables import t10
-    t10()
+    (ROOT / "analysis/data/control_matrix.json").write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps({k: result[k] for k in ("rows", "protocol_change_contrasts")}, indent=2))
 
 

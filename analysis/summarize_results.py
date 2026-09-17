@@ -3,8 +3,8 @@
 Run this before quoting any figure in the prose. Each block prints the study
 it draws on, so a reader (or reviewer) can trace a number to a run set.
 
-Selected manuscript numbers and source-record agreement are additionally
-asserted in tests/test_manuscript_evidence.py.
+Selected numerical results and source-record agreement are additionally
+asserted in tests/test_result_evidence.py.
 """
 from __future__ import annotations
 

@@ -47,7 +47,7 @@ def validate(path, cfg):
 
 
 def verify_sources():
-    snapshot = json.loads((ROOT / "paper/data/control_implementation.json").read_text())
+    snapshot = json.loads((ROOT / "analysis/data/control_implementation.json").read_text())
     for name, digest in snapshot["files"].items():
         actual = hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
         if actual != digest:

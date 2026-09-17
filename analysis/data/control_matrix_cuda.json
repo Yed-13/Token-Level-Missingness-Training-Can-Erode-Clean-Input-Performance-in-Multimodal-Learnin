@@ -429,241 +429,241 @@
   "study": "cuda_factorial_20260917",
   "provenance": [
     {
-      "path": "paper/data/control_matrix_cuda_runs/IMM-U-lo-loss0.0-seed0.json",
+      "path": "analysis/data/control_matrix_cuda_runs/IMM-U-lo-loss0.0-seed0.json",
       "sha256": "0b90576539e6b7426c2c9612dc38b3224cf0cc0d98a18a56c13357311f2270ac",
       "checkpoint": "results_controls_cuda/loss0/MOSI/IMM/recon__train-U-lo__seed0.pt",
       "checkpoint_sha256": "7127e67970aab9e58c113455bbaa6cbe4443f685b1ff46cd5e842396ae354429"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/IMM-U-lo-loss0.5-seed0.json",
+      "path": "analysis/data/control_matrix_cuda_runs/IMM-U-lo-loss0.5-seed0.json",
       "sha256": "bdf6a90c4217bbee52e000a20ff0cd804137b2576cba784c32b24b4b43c76ec3",
       "checkpoint": "results_controls_cuda/loss05/MOSI/IMM/recon__train-U-lo__seed0.pt",
       "checkpoint_sha256": "b196b9ac1b1e1bd227c1e053b9fc72a6fcca47596bedfe42b64211338f36afc3"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/IMM-T-frag-loss0.0-seed0.json",
+      "path": "analysis/data/control_matrix_cuda_runs/IMM-T-frag-loss0.0-seed0.json",
       "sha256": "b5690d94f6a0cbb39a7b36abd7576c76bd60e47adb9694e5d768be5fb94d610a",
       "checkpoint": "results_controls_cuda/loss0/MOSI/IMM/recon__train-T-frag__seed0.pt",
       "checkpoint_sha256": "227e21b8af6510de3d337219044e56626de12adb5ca264113a88c90ebb701246"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/IMM-T-frag-loss0.5-seed0.json",
+      "path": "analysis/data/control_matrix_cuda_runs/IMM-T-frag-loss0.5-seed0.json",
       "sha256": "7512c94307ef63a466fa0c5190b60bfd9cb6b4fbc92bf30cd4c3e16aeb4be57d",
       "checkpoint": "results_controls_cuda/loss05/MOSI/IMM/recon__train-T-frag__seed0.pt",
       "checkpoint_sha256": "08b1213e264853d7ffed5cc16ce768fe1bf7521371f9a183e840f1eddbc630b9"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/FMM-U-lo-loss0.0-seed0.json",
+      "path": "analysis/data/control_matrix_cuda_runs/FMM-U-lo-loss0.0-seed0.json",
       "sha256": "f5976a0a8b61daab99cf720bca75a8e3691976c389a5c56864f64962cb508f72",
       "checkpoint": "results_controls_cuda/loss0/MOSI/FMM/recon__train-U-lo__seed0.pt",
       "checkpoint_sha256": "9d2630adf7a4bc24fa77c1cbedc38a2590f5ebe5d4cbc602e6b3ae45c3abe7b3"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/FMM-U-lo-loss0.5-seed0.json",
+      "path": "analysis/data/control_matrix_cuda_runs/FMM-U-lo-loss0.5-seed0.json",
       "sha256": "ed574f7e430d5e33372610f13448419ff4009ff7a66e5f2dd055701006a3b20d",
       "checkpoint": "results_controls_cuda/loss05/MOSI/FMM/recon__train-U-lo__seed0.pt",
       "checkpoint_sha256": "7c5076c15caf01b612b15dc0ce68b8d1b9180b7d79674029f6db48d3de2abf12"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/FMM-T-frag-loss0.0-seed0.json",
+      "path": "analysis/data/control_matrix_cuda_runs/FMM-T-frag-loss0.0-seed0.json",
       "sha256": "e4e7f24063050b8a814a6d566d50004c3d0f2e0416778ed637c4a952b3e51a03",
       "checkpoint": "results_controls_cuda/loss0/MOSI/FMM/recon__train-T-frag__seed0.pt",
       "checkpoint_sha256": "e791172dce6e9447e95900f0b035503ebe5a0c132510027d5a440b24b558eb67"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/FMM-T-frag-loss0.5-seed0.json",
+      "path": "analysis/data/control_matrix_cuda_runs/FMM-T-frag-loss0.5-seed0.json",
       "sha256": "a869fe0dda842a6dd11c798a45220edd0f81559ef087fcdcfef5de58f54e53f4",
       "checkpoint": "results_controls_cuda/loss05/MOSI/FMM/recon__train-T-frag__seed0.pt",
       "checkpoint_sha256": "2dee04fe8964854d455ff26786df0bcf7104ec5e71e36202ae715d876f844ed9"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/IMM-U-lo-loss0.0-seed1.json",
+      "path": "analysis/data/control_matrix_cuda_runs/IMM-U-lo-loss0.0-seed1.json",
       "sha256": "a40b32af1de01c98b49fa388ed7aa609b888fcffdeb6c3c8e883589276aa5672",
       "checkpoint": "results_controls_cuda/loss0/MOSI/IMM/recon__train-U-lo__seed1.pt",
       "checkpoint_sha256": "6105773b5ac21fa144a2b47fd93705c037c83039bfefbb1026fbffd2bddde231"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/IMM-U-lo-loss0.5-seed1.json",
+      "path": "analysis/data/control_matrix_cuda_runs/IMM-U-lo-loss0.5-seed1.json",
       "sha256": "64da59236f08ce730d1e8e815244c4f47685672bdd2504d9b371c31184115e7f",
       "checkpoint": "results_controls_cuda/loss05/MOSI/IMM/recon__train-U-lo__seed1.pt",
       "checkpoint_sha256": "0780f3dd4fc29e61e12caba52454162f387ced5931993bbc113e6aef93a3467c"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/IMM-T-frag-loss0.0-seed1.json",
+      "path": "analysis/data/control_matrix_cuda_runs/IMM-T-frag-loss0.0-seed1.json",
       "sha256": "0d35e083d45ec7c70b06e8071354c7cbc2de666ae5d5256ffca7d00e9d9c6b35",
       "checkpoint": "results_controls_cuda/loss0/MOSI/IMM/recon__train-T-frag__seed1.pt",
       "checkpoint_sha256": "4247c4ceeb6852865f6301b68fc241e5467373a7d63f3d8b219c6df3a04af260"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/IMM-T-frag-loss0.5-seed1.json",
+      "path": "analysis/data/control_matrix_cuda_runs/IMM-T-frag-loss0.5-seed1.json",
       "sha256": "0aecf1ad70c67346b67dce229c02a568d7bd061659c76add4c4b9a9a83f21727",
       "checkpoint": "results_controls_cuda/loss05/MOSI/IMM/recon__train-T-frag__seed1.pt",
       "checkpoint_sha256": "65c935b49ade35a5eca1d4239624689f28da12f9482e5b458572a73407275985"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/FMM-U-lo-loss0.0-seed1.json",
+      "path": "analysis/data/control_matrix_cuda_runs/FMM-U-lo-loss0.0-seed1.json",
       "sha256": "7812e505a7220c0158abcab1154882caca587b79e2a715ffd72fe40a43bb3cb0",
       "checkpoint": "results_controls_cuda/loss0/MOSI/FMM/recon__train-U-lo__seed1.pt",
       "checkpoint_sha256": "f1845d62986501d4d61f38cf70682a1f1012b62c363eca10fd9435c0081b8e31"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/FMM-U-lo-loss0.5-seed1.json",
+      "path": "analysis/data/control_matrix_cuda_runs/FMM-U-lo-loss0.5-seed1.json",
       "sha256": "3dd25eedf16927562a005f42dee9587d2432906fcdaa14182711976d0ca67eb0",
       "checkpoint": "results_controls_cuda/loss05/MOSI/FMM/recon__train-U-lo__seed1.pt",
       "checkpoint_sha256": "2da15474b7abd0e00ae2b9a430afe0035410d354638cfe0cbe6fecde27ee4898"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/FMM-T-frag-loss0.0-seed1.json",
+      "path": "analysis/data/control_matrix_cuda_runs/FMM-T-frag-loss0.0-seed1.json",
       "sha256": "27f8bf8b0531b082162e0933a9289e0f75dfba08a73326600f9f1175fcdc37a3",
       "checkpoint": "results_controls_cuda/loss0/MOSI/FMM/recon__train-T-frag__seed1.pt",
       "checkpoint_sha256": "e161df4a158eb01ce5f54b6fc1cc03b59ed86fd902994f2e8c0bdb794b2bf387"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/FMM-T-frag-loss0.5-seed1.json",
+      "path": "analysis/data/control_matrix_cuda_runs/FMM-T-frag-loss0.5-seed1.json",
       "sha256": "92fe349d6ba6a188850c6fad8787ecbd3fa86e64f898345e9eaee08b1994e82f",
       "checkpoint": "results_controls_cuda/loss05/MOSI/FMM/recon__train-T-frag__seed1.pt",
       "checkpoint_sha256": "22427a37394a794aa1722973fe9d75787776571842ff270b983d8176fa44ccd9"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/IMM-U-lo-loss0.0-seed2.json",
+      "path": "analysis/data/control_matrix_cuda_runs/IMM-U-lo-loss0.0-seed2.json",
       "sha256": "596a8fa08f8ce3f66f531f5d8a8d8ed6922b38aa7af7b3ee0bdbc29e33fec012",
       "checkpoint": "results_controls_cuda/loss0/MOSI/IMM/recon__train-U-lo__seed2.pt",
       "checkpoint_sha256": "ae7041605c8cb9d067b04ca59c9fd2b8a167a2c1abd8a3e7bb4814d0b530c316"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/IMM-U-lo-loss0.5-seed2.json",
+      "path": "analysis/data/control_matrix_cuda_runs/IMM-U-lo-loss0.5-seed2.json",
       "sha256": "9764258a24112ebbe40339e41e1e2597db7e40e8d43781eb83884e420a9af133",
       "checkpoint": "results_controls_cuda/loss05/MOSI/IMM/recon__train-U-lo__seed2.pt",
       "checkpoint_sha256": "4aa3d94f06b074bbc09994d6fa6cee1807eceb4c46ccd716893a1cb199714be0"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/IMM-T-frag-loss0.0-seed2.json",
+      "path": "analysis/data/control_matrix_cuda_runs/IMM-T-frag-loss0.0-seed2.json",
       "sha256": "9ed32360d87356220f14871a6be91f2104e161637b6029869f36887671e215ce",
       "checkpoint": "results_controls_cuda/loss0/MOSI/IMM/recon__train-T-frag__seed2.pt",
       "checkpoint_sha256": "69d8d654d40cc8c332c62b83ea69ed96245cf2a6a2990baec6fd9f47e020303a"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/IMM-T-frag-loss0.5-seed2.json",
+      "path": "analysis/data/control_matrix_cuda_runs/IMM-T-frag-loss0.5-seed2.json",
       "sha256": "37e9b7f044ce229944d1f2b3d1fdf42236bcb66dfa0b557b0c26936ef1d85567",
       "checkpoint": "results_controls_cuda/loss05/MOSI/IMM/recon__train-T-frag__seed2.pt",
       "checkpoint_sha256": "cf127eb53271cc092cfa45eb5e71c88ca83c75ca6ef522a4e5c8bf3ee31b87e8"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/FMM-U-lo-loss0.0-seed2.json",
+      "path": "analysis/data/control_matrix_cuda_runs/FMM-U-lo-loss0.0-seed2.json",
       "sha256": "9bc2b82a9b97d51a897d07e700af560f71d4900479831da29fba80c5e5eb67dc",
       "checkpoint": "results_controls_cuda/loss0/MOSI/FMM/recon__train-U-lo__seed2.pt",
       "checkpoint_sha256": "3b550aeffe6ea167724ca2c0f36affae61cd1ae6f14030cf947bae7a17ed6ad7"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/FMM-U-lo-loss0.5-seed2.json",
+      "path": "analysis/data/control_matrix_cuda_runs/FMM-U-lo-loss0.5-seed2.json",
       "sha256": "0e69ee690f5bd97a7979ff7061bd1d37d5623e292f272de696964c5188cc14f1",
       "checkpoint": "results_controls_cuda/loss05/MOSI/FMM/recon__train-U-lo__seed2.pt",
       "checkpoint_sha256": "a29360f3961cb7077bb483cd944978370542cf61370f3cf4e19f26cf745c5699"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/FMM-T-frag-loss0.0-seed2.json",
+      "path": "analysis/data/control_matrix_cuda_runs/FMM-T-frag-loss0.0-seed2.json",
       "sha256": "468d82c4d385ee1877a6f6705f7652654e9b5cd26f468f5f544c80d596dfdf8b",
       "checkpoint": "results_controls_cuda/loss0/MOSI/FMM/recon__train-T-frag__seed2.pt",
       "checkpoint_sha256": "f5d9158acf4298b6e7280220f01c5a6c206faa5e080d59792625bd0ceebc747a"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/FMM-T-frag-loss0.5-seed2.json",
+      "path": "analysis/data/control_matrix_cuda_runs/FMM-T-frag-loss0.5-seed2.json",
       "sha256": "c9f058ee1e5e6fcd4cad8d6a1fce45deb21010e7d4ea27378715b117d0a4f640",
       "checkpoint": "results_controls_cuda/loss05/MOSI/FMM/recon__train-T-frag__seed2.pt",
       "checkpoint_sha256": "e0024fcd56c056f8e449f718e5d4c4b2a973c1fc90c7761fc42ded852765e3b0"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/IMM-U-lo-loss0.0-seed3.json",
+      "path": "analysis/data/control_matrix_cuda_runs/IMM-U-lo-loss0.0-seed3.json",
       "sha256": "e73125fb31c4b524c47754228f264150c98e59aa35f980b6c607183f13910fc2",
       "checkpoint": "results_controls_cuda/loss0/MOSI/IMM/recon__train-U-lo__seed3.pt",
       "checkpoint_sha256": "9a848475c7d0f2725bea27bca14220d20da952f6e403c2d8f1d7508666f72244"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/IMM-U-lo-loss0.5-seed3.json",
+      "path": "analysis/data/control_matrix_cuda_runs/IMM-U-lo-loss0.5-seed3.json",
       "sha256": "6f489d3f2f940dbaae814759dda91add7bd805dd7083ac396d48bc5d7db8adfc",
       "checkpoint": "results_controls_cuda/loss05/MOSI/IMM/recon__train-U-lo__seed3.pt",
       "checkpoint_sha256": "0edba888bae9055890f48e655dd4d376a18e6c142cc33812a7561f65242467c7"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/IMM-T-frag-loss0.0-seed3.json",
+      "path": "analysis/data/control_matrix_cuda_runs/IMM-T-frag-loss0.0-seed3.json",
       "sha256": "5a7c7d2c91e3200bfea67eeb9ee7fd7d6b116cbb5555568595cd04919f5b862c",
       "checkpoint": "results_controls_cuda/loss0/MOSI/IMM/recon__train-T-frag__seed3.pt",
       "checkpoint_sha256": "e3c73ea68720af71dbae8378967ae72b4da2e119dd19ec4f552590586d121564"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/IMM-T-frag-loss0.5-seed3.json",
+      "path": "analysis/data/control_matrix_cuda_runs/IMM-T-frag-loss0.5-seed3.json",
       "sha256": "1545cbae39f3d254b6bb09ac46d4fc39da6c3012c2b5ff418e87526e34142a73",
       "checkpoint": "results_controls_cuda/loss05/MOSI/IMM/recon__train-T-frag__seed3.pt",
       "checkpoint_sha256": "96ea287547185d10e0f6b03175743268a1c38bd3c35538500dabdb9e3e635d11"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/FMM-U-lo-loss0.0-seed3.json",
+      "path": "analysis/data/control_matrix_cuda_runs/FMM-U-lo-loss0.0-seed3.json",
       "sha256": "89fa2a54ef47b55481ffcd6424e028b052ad9e9a2319222c2d8a2881a9cc40ce",
       "checkpoint": "results_controls_cuda/loss0/MOSI/FMM/recon__train-U-lo__seed3.pt",
       "checkpoint_sha256": "70414983143543da4de063f51e35e48e07903232cb79c70a23d59d80785e8857"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/FMM-U-lo-loss0.5-seed3.json",
+      "path": "analysis/data/control_matrix_cuda_runs/FMM-U-lo-loss0.5-seed3.json",
       "sha256": "f7f7fb24c29b144bee67eea6d7efad0515cd8e0863d04e0b59b2d31326f22ed6",
       "checkpoint": "results_controls_cuda/loss05/MOSI/FMM/recon__train-U-lo__seed3.pt",
       "checkpoint_sha256": "734a9ea3212ffecb7a0a44816fd001e140c241ffbb809dd9e883d7255c25aa67"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/FMM-T-frag-loss0.0-seed3.json",
+      "path": "analysis/data/control_matrix_cuda_runs/FMM-T-frag-loss0.0-seed3.json",
       "sha256": "2003f21fcb0381e158d9037c643f4df5771372855f75c6bd47b9244538253a8e",
       "checkpoint": "results_controls_cuda/loss0/MOSI/FMM/recon__train-T-frag__seed3.pt",
       "checkpoint_sha256": "3d07867a336d10352fac08ea87bb6d3e6a019feece48f969eaa6e44a35fe4e17"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/FMM-T-frag-loss0.5-seed3.json",
+      "path": "analysis/data/control_matrix_cuda_runs/FMM-T-frag-loss0.5-seed3.json",
       "sha256": "e875dc18c1460bf8dae0e672bf2e61bb2ff9d4461cdc3f45cc3e5593c9a9dc1c",
       "checkpoint": "results_controls_cuda/loss05/MOSI/FMM/recon__train-T-frag__seed3.pt",
       "checkpoint_sha256": "f9a5e6fba29f957c07b0385ca58200d498ffcdfc979bf3821676abc44f13b2c2"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/IMM-U-lo-loss0.0-seed4.json",
+      "path": "analysis/data/control_matrix_cuda_runs/IMM-U-lo-loss0.0-seed4.json",
       "sha256": "c711c99c7b5aa53abc1456ca1a66245d7dbc333330bb695dde2f2ab275a391ce",
       "checkpoint": "results_controls_cuda/loss0/MOSI/IMM/recon__train-U-lo__seed4.pt",
       "checkpoint_sha256": "e89822c01d28afb718492366458b7a40bc4774371c1ec00ab827d3a33a1f24c6"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/IMM-U-lo-loss0.5-seed4.json",
+      "path": "analysis/data/control_matrix_cuda_runs/IMM-U-lo-loss0.5-seed4.json",
       "sha256": "9d7974d8e9326ef861213b3262fd36468f985ee3eca0cc0222ccc331eef16704",
       "checkpoint": "results_controls_cuda/loss05/MOSI/IMM/recon__train-U-lo__seed4.pt",
       "checkpoint_sha256": "3a21c0523bb259f09ad409fd49431c5798fbf57102138b7a7000413389d8e60b"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/IMM-T-frag-loss0.0-seed4.json",
+      "path": "analysis/data/control_matrix_cuda_runs/IMM-T-frag-loss0.0-seed4.json",
       "sha256": "152deba2c876e61090a4b7f6f76b77f0d7070496138b5e2a966f5b60b035fa68",
       "checkpoint": "results_controls_cuda/loss0/MOSI/IMM/recon__train-T-frag__seed4.pt",
       "checkpoint_sha256": "72c85ceff1b61cfcd19495e87988746eb8bffbed5524fb63d42b55c40f5964d0"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/IMM-T-frag-loss0.5-seed4.json",
+      "path": "analysis/data/control_matrix_cuda_runs/IMM-T-frag-loss0.5-seed4.json",
       "sha256": "e52da1b75d8f4ca06562a5f80687f44f2769710c467947b6d9be55a178c768ca",
       "checkpoint": "results_controls_cuda/loss05/MOSI/IMM/recon__train-T-frag__seed4.pt",
       "checkpoint_sha256": "249d8a76fa069f9ae0f8f1f57570ba8127a2a3264d8bb15f8e5720a37a7ba5df"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/FMM-U-lo-loss0.0-seed4.json",
+      "path": "analysis/data/control_matrix_cuda_runs/FMM-U-lo-loss0.0-seed4.json",
       "sha256": "6cb96a79c9af42c64e14ca6b996a4a2bf747d612935a0b7be4ea598f51c28711",
       "checkpoint": "results_controls_cuda/loss0/MOSI/FMM/recon__train-U-lo__seed4.pt",
       "checkpoint_sha256": "a4c65b0c446ff6367ef2efa6cae78860ea198c2883ca1c2efd842f9019995dd8"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/FMM-U-lo-loss0.5-seed4.json",
+      "path": "analysis/data/control_matrix_cuda_runs/FMM-U-lo-loss0.5-seed4.json",
       "sha256": "8a3f11ea5b0ffd7380c3894c2750c62985cb6feed37f05c2e877afff03f1570f",
       "checkpoint": "results_controls_cuda/loss05/MOSI/FMM/recon__train-U-lo__seed4.pt",
       "checkpoint_sha256": "65498bdf1b5452ce5ab8ab006c8f672e6e9782ba237af8a4e46fc21b9ebc6655"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/FMM-T-frag-loss0.0-seed4.json",
+      "path": "analysis/data/control_matrix_cuda_runs/FMM-T-frag-loss0.0-seed4.json",
       "sha256": "32717a9fb24866a5e280ded5585f5f16e4591739a0be661f7fb6c424ad3a3e75",
       "checkpoint": "results_controls_cuda/loss0/MOSI/FMM/recon__train-T-frag__seed4.pt",
       "checkpoint_sha256": "fc2855f5411ce3203d19f2fba34dcdb815ac7f468faf518dcef6eaeec65eaf13"
     },
     {
-      "path": "paper/data/control_matrix_cuda_runs/FMM-T-frag-loss0.5-seed4.json",
+      "path": "analysis/data/control_matrix_cuda_runs/FMM-T-frag-loss0.5-seed4.json",
       "sha256": "1a23541d6969ea530fc6adba1cc12076c0f118f275ceabd0b308862e79af1f74",
       "checkpoint": "results_controls_cuda/loss05/MOSI/FMM/recon__train-T-frag__seed4.pt",
       "checkpoint_sha256": "c46e9bb0e08b663b322814fd031a8e6693ba76e291442b26916415764315f7c4"

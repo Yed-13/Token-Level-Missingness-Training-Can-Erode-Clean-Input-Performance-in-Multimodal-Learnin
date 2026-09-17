@@ -1,7 +1,0 @@
-Highlights
-
-- Missingness-training protocols produce different clean-input outcomes.
-- Text-scarce token-level training reduces clean accuracy by up to 27.7 points.
-- The effect grows with less training data and replicates with RoBERTa.
-- Unknown-token substitution produces a 29.6-point clean-input change.
-- Modality dropout keeps clean accuracy near its benign-training reference.

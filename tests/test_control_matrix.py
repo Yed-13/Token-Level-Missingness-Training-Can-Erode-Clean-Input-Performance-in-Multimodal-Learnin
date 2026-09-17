@@ -73,7 +73,7 @@ class ControlMatrixTests(unittest.TestCase):
             summarize(records)
 
     def test_completed_cuda_study_matches_hashed_records(self):
-        report = json.loads((ROOT / "paper/data/control_matrix_cuda.json").read_text())
+        report = json.loads((ROOT / "analysis/data/control_matrix_cuda.json").read_text())
         self.assertEqual(len(report["provenance"]), 40)
         records = []
         for item in report["provenance"]:
@@ -87,11 +87,9 @@ class ControlMatrixTests(unittest.TestCase):
         self.assertEqual(report["env"]["device"], "cuda")
         expected = {("IMM", 0.0): -22.96, ("IMM", 0.5): -16.52,
                     ("FMM", 0.0): -1.10, ("FMM", 0.5): -0.61}
-        table = (ROOT / "paper/tables/control_matrix_cuda.tex").read_text()
         for row in report["rows"]:
             change = row["acc2"]["change"]
             self.assertEqual(round(change["mean"], 2), expected[row["protocol"], row["coefficient"]])
-            self.assertIn(f"{change['mean']:+.2f} $\\pm$ {change['sd']:.2f}", table)
         contrasts = report["protocol_change_contrasts"]["acc2"]
         self.assertTrue(all(x < 0 for w in ("0.0", "0.5") for x in contrasts[w]["values"]))
         self.assertEqual(round(contrasts["interaction"]["mean"], 2), 5.95)

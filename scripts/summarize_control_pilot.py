@@ -20,7 +20,7 @@ def main():
     for path, rec in zip(paths, records):
         assert rec["n_train"] == 1284
         assert rec["config"]["seed"] == 0
-        archived_path = ROOT / "paper/data/control_runs" / (path.parents[2].name + ".json")
+        archived_path = ROOT / "analysis/data/control_runs" / (path.parents[2].name + ".json")
         archived_path.parent.mkdir(parents=True, exist_ok=True)
         archived_path.write_bytes(path.read_bytes())
         rows.append(dict(coefficient=rec["config"]["lambda_recon"],
@@ -31,10 +31,7 @@ def main():
                          result_path=str(archived_path.relative_to(ROOT)),
                          source_result_path=str(path.relative_to(ROOT))))
     result = dict(config=configs[0], env=records[0]["env"], rows=rows)
-    (ROOT / "paper/data/control_pilot.json").write_text(json.dumps(result, indent=2) + "\n")
-    sys.path.insert(0, str(ROOT))
-    from paper.make_tables import t8
-    t8()
+    (ROOT / "analysis/data/control_pilot.json").write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
 
 

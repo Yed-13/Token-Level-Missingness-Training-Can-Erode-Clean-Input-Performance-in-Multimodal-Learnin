@@ -53,11 +53,9 @@ def run():
                   source_sha256=digest, rate_seed_base=31000, mask_seed_base=41000,
                   operator_sha256=hashlib.sha256((ROOT / "parm/data/masking.py").read_bytes()).hexdigest(),
                   rows=rows)
-    destination = ROOT / "paper/data/masking_exposure.json"
+    destination = ROOT / "analysis/data/masking_exposure.json"
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(json.dumps(result, indent=2) + "\n")
-    from paper.make_tables import t7
-    t7()
     print(json.dumps(result, indent=2))
 
 

@@ -1,38 +1,24 @@
 # Clean-input performance under missingness training
 
-This repository contains the code, per-run results, and manuscript sources for
-*Token-Level Missingness Training Can Erode Clean-Input Performance in
-Multimodal Learning*.
+Experiment code and results for *Token-Level Missingness Training Can Erode
+Clean-Input Performance in Multimodal Learning*.
 
-Repository: https://github.com/Yed-13/Token-Level-Missingness-Training-Can-Erode-Clean-Input-Performance-in-Multimodal-Learnin
+## Reproduce numerical results
 
-The manuscript PDF and editable LaTeX source are in `paper/`; the complete
-40-run CUDA control results are in `paper/data/control_matrix_cuda.json`.
-
-Incomplete multimodal systems are commonly trained with either partial
-temporal erasure or whole-modality absence. At matched nominal rate schedules,
-these choices have different effects when the trained system is evaluated on
-complete input. Across CMU-MOSI, CMU-MOSEI, and CH-SIMS, high-rate token-level
-erasure changes clean-input binary accuracy by as much as -27.7 points, while
-the largest decrease with whole-modality absence is 2.2 points in the corresponding
-comparisons. These are end-to-end system measurements; they do not isolate a
-single encoder layer or gradient path.
-
-## Reproduce the paper artifacts
-
-Python 3.10 or newer is recommended.
+Python 3.11 is recommended. No GPU or dataset download is needed for this check.
 
 ```bash
 python -m venv .venv
 . .venv/bin/activate
 pip install -r requirements-analysis.txt
-./scripts/reproduce_paper.sh
+python analysis/summarize_results.py
+python -m unittest discover -s tests -q
 ```
 
-The script recomputes the study summaries, regenerates tables and
-figures from the bundled JSON results, tests selected numerical claims and
-deterministic evaluation seeds,
-and builds `paper/main.pdf` when `pdflatex` and `bibtex` are installed.
+The analysis keeps the archived studies separate: 388 fine-tuned-text-pathway
+runs, 24 frozen-feature runs, and the independent 40-run CUDA control matrix.
+Statistics are descriptive, with seed-paired differences and population standard
+deviations. Tests recompute the control summary and verify raw-record hashes.
 
 ## Re-run experiments
 
@@ -43,69 +29,53 @@ python -m parm.train --dataset MOSI --method recon --text-encoder bert \
   --protocol IMM --train-regime T-frag --seed 0 --out results_x
 ```
 
-`--protocol IMM` applies position-level erasure; `--protocol FMM` applies
-whole-modality absence. `--text-mask-mode remove|unk` selects attention-mask
-removal or `[UNK]` substitution. Evaluation masks use a stable digest of the
-dataset, regime, repeat, and stream names, so separate Python processes recover
-the same evaluation samples for the same configuration. Archived runs predate
-this seed correction; their masks were not guaranteed identical across
-processes. Complete-input evaluations apply no corruption, while checkpoint
-selection used sampled validation masks.
+`IMM` applies temporal position-level erasure; `FMM` applies whole-modality
+absence. `--text-mask-mode remove|unk` chooses attention-mask removal or `[UNK]`
+substitution. Datasets are obtained from the upstream distributor and checked
+against recorded SHA-256 digests; dataset binaries are not bundled.
 
-## Protocol controls
+Current evaluation masks use stable digest-based seeds. Archived studies predate
+this correction and did not guarantee identical validation masks across Python
+processes. Complete-input evaluation applies no corruption.
 
-The measured masking-exposure study and local reconstruction-loss controls are
-documented in `paper/CONTROL_STUDY.md`. The exposure measurements and source
-checksums are stored in `paper/data/masking_exposure.json` and regenerate the
-corresponding manuscript table without requiring training dependencies.
-Re-measuring exposure requires the dataset and PyTorch:
+## Independent CUDA controls
 
-```bash
-python scripts/audit_mask_exposure.py
-```
+The fixed matrix has five seeds (0–4), two protocols (IMM/FMM), two training
+regimes (U-lo/T-frag), and two reconstruction-loss weights (0/0.5): 40 runs.
+It uses full MOSI training data, BERT, batch size 32, at most 40 epochs, and
+patience 8. Checkpoints are selected by validation MAE under the training
+regime with two fixed mask repetitions. See `requirements-controls-cuda.txt`
+for the recorded core environment.
 
-Training supports `--save-checkpoint 1` and `--validation-regime NONE` for a
-predefined complete-input validation sensitivity run. The latter changes the
-validation condition, not the training corruption. To evaluate a selected
-reconstruction-model checkpoint under both test corruption protocols:
-
-```bash
-python scripts/evaluate_control_checkpoint.py PATH_TO_CHECKPOINT
-```
-
-Local Metal controls use eager BERT attention to preserve attention dropout.
-Their results are kept separate from archived CUDA studies.
-
-The completed auxiliary-loss control matrix uses five seeds, two training
-operators, two regimes and two loss coefficients (40 fresh CUDA runs):
+On a provisioned CUDA host with inputs available:
 
 ```bash
 python scripts/run_cuda_controls.py --jobs 4
 python scripts/summarize_cuda_controls.py
 ```
 
-The runner executes up to four jobs at a time, validates completed records before
-skipping them, saves selected checkpoints, and refuses conflicting outputs.
-Its training logs are in `results_controls_cuda/logs/`. The summary requires all
-40 matched records; it does not report a partial matrix as a complete study.
-See `paper/CONTROL_ANALYSIS_PLAN.md` for the fixed contrasts and interpretation.
-The complete summary and hashed raw records are bundled under
-`paper/data/control_matrix_cuda*`; selected checkpoint hashes are included.
-Token-level clean accuracy changes by -22.96 points at reconstruction weight
-zero and -16.52 at weight 0.5, versus -1.10 and -0.61 for modality-level
-training. These are seed-paired means, with variation reported in the paper.
-The partial Metal study is retained separately and was stopped at the user's
-request; do not combine its cells with the CUDA matrix.
+The runner verifies training-source hashes and completed configurations before
+skipping runs. The summarizer requires all 40 records and their checkpoints.
+Released checkpoint hashes are in `analysis/data/control_matrix_cuda.json`;
+the large checkpoint binaries are not included. Use the analysis command above
+to inspect bundled results without checkpoints or training.
 
-## Repository layout
+The prespecified contrasts are text-scarce minus benign within each protocol
+and weight, the token-level minus modality-level contrast, and its change
+between weights. The clean accuracy changes are -22.96 and -16.52 percentage
+points for token-level training at weights 0 and 0.5, versus -1.10 and -0.61
+for modality-level training. This is an end-to-end system comparison; it does
+not isolate an encoder gradient path. Separate partial Metal-runtime results
+must not be pooled with this matrix.
 
-- `parm/`: data loading, masking, models, training, and analysis.
-- `paper/`: manuscript, claim verifier, generated tables, and figures.
-- `results_*/`: one JSON record per run, including configuration and metrics.
-- `tests/`: reproducibility checks.
-- `scripts/reproduce_paper.sh`: artifact-regeneration entry point.
+## Layout
 
-The archived study comprises 388 fine-tuned-text-pathway runs and 24 frozen-feature
-runs. Reported comparisons use seed-paired means and standard deviations where
-paired runs are available. The analysis is descriptive and reports no
-null-hypothesis tests. The primary reference is benign missingness training.
+- `parm/`: data loading, masking, models, training, and evaluation.
+- `scripts/`: experiment runners, audits, and summary generation.
+- `analysis/`: study registry, numerical summaries, and provenance records.
+- `results*/`: per-run configurations and measurements.
+- `tests/`: reproducibility, evidence, and control-design checks.
+- `datasets/alpha_*.json`: calibration metadata.
+
+This code-and-results release excludes manuscript PDFs, LaTeX sources,
+publication figures, review notes, dataset binaries, and model weights.

@@ -54,7 +54,7 @@ def main():
             rows.append(row)
     result = dict(dataset="MOSI", max_length=50, lengths_include_special_tokens=True,
                   source_sha256=digest, token_cache_sha256=sha256_of(cache_path), rows=rows)
-    destination = ROOT / "paper/data/tokenization_audit.json"
+    destination = ROOT / "analysis/data/tokenization_audit.json"
     destination.write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
 

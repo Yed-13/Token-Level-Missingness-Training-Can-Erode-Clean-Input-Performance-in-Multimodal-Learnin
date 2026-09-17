@@ -11,7 +11,7 @@ FILES = ["parm/train.py", "parm/seeding.py", "parm/data/datasets.py",
 
 
 def main():
-    destination = ROOT / "paper/data/control_implementation.json"
+    destination = ROOT / "analysis/data/control_implementation.json"
     record = dict(
         files={name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
                for name in FILES},
